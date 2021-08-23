@@ -1,0 +1,444 @@
+{
+ "actions": [],
+ "autoname": "field:num_fac",
+ "creation": "2021-01-20 17:04:13.171381",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "estab",
+  "cliente",
+  "num_fac",
+  "column_break_3",
+  "ptoemi",
+  "fechaemision",
+  "poliza",
+  "seccion_detalle",
+  "factura_detalle",
+  "totales_section",
+  "totaldescuento",
+  "baseimponible",
+  "totalsinimpuestos",
+  "secuencial",
+  "column_break_17",
+  "importetotal",
+  "iva_total",
+  "column_break_18",
+  "saldo",
+  "sec_infoadicional",
+  "infoadicional",
+  "retenciones_aplicadas_section",
+  "ret_iva",
+  "column_break_23",
+  "ret_renta",
+  "section_break_5",
+  "formapago",
+  "sec_sri",
+  "clavedeacceso",
+  "fecha_auto",
+  "mensaje",
+  "btnnotacredito",
+  "generarxml",
+  "sri_establecimiento",
+  "column_break_32",
+  "numero_auto",
+  "sri_ambiente",
+  "estado",
+  "ride",
+  "detalle_pago_section",
+  "registrocobro",
+  "usuario",
+  "secnotascred",
+  "notascredito",
+  "seceselec",
+  "secuencial2",
+  "amended_from",
+  "cedulacli",
+  "direccioncli",
+  "emailcli",
+  "registro_cobros",
+  "section_break_49",
+  "barcode",
+  "numero_poliza",
+  "fecha_pago",
+  "ramos",
+  "subtotalcero"
+ ],
+ "fields": [
+  {
+   "fieldname": "estab",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Sucursal",
+   "options": "Agencias",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cliente",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Cliente",
+   "options": "Entidades",
+   "reqd": 1
+  },
+  {
+   "fieldname": "num_fac",
+   "fieldtype": "Data",
+   "label": "N\u00famero de Factura",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ptoemi",
+   "fieldtype": "Read Only",
+   "label": "Punto de Emisi\u00f3n"
+  },
+  {
+   "default": "Today",
+   "fieldname": "fechaemision",
+   "fieldtype": "Date",
+   "label": "Fecha"
+  },
+  {
+   "fieldname": "poliza",
+   "fieldtype": "Link",
+   "label": "Endoso",
+   "options": "Poliza"
+  },
+  {
+   "fieldname": "seccion_detalle",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "factura_detalle",
+   "fieldtype": "Table",
+   "label": "Detalle",
+   "options": "factura_detalle"
+  },
+  {
+   "fieldname": "totales_section",
+   "fieldtype": "Section Break",
+   "label": "TOTALES"
+  },
+  {
+   "fieldname": "totaldescuento",
+   "fieldtype": "Currency",
+   "label": "Total Descuentos",
+   "read_only": 1
+  },
+  {
+   "fieldname": "baseimponible",
+   "fieldtype": "Currency",
+   "label": "Base Imponible",
+   "read_only": 1
+  },
+  {
+   "fieldname": "totalsinimpuestos",
+   "fieldtype": "Currency",
+   "label": "Total Sin Impuestos",
+   "read_only": 1
+  },
+  {
+   "fieldname": "secuencial",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Secuencial"
+  },
+  {
+   "fieldname": "column_break_17",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "importetotal",
+   "fieldtype": "Currency",
+   "label": "VALOR TOTAL",
+   "read_only": 1
+  },
+  {
+   "fieldname": "iva_total",
+   "fieldtype": "Currency",
+   "label": "IVA Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_18",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "saldo",
+   "fieldtype": "Currency",
+   "label": "Saldo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sec_infoadicional",
+   "fieldtype": "Section Break",
+   "label": "Informaci\u00f3n Adicional"
+  },
+  {
+   "fieldname": "infoadicional",
+   "fieldtype": "Table",
+   "options": "infoAdicional"
+  },
+  {
+   "fieldname": "retenciones_aplicadas_section",
+   "fieldtype": "Section Break",
+   "label": "Retenciones Aplicadas"
+  },
+  {
+   "fieldname": "ret_iva",
+   "fieldtype": "Data",
+   "label": "Iva",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_23",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ret_renta",
+   "fieldtype": "Data",
+   "label": "Renta",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "01-SIN UTILIZACION DEL SISTEMA FINANCIERO",
+   "fieldname": "formapago",
+   "fieldtype": "Select",
+   "label": "Forma Pago",
+   "options": "01-SIN UTILIZACION DEL SISTEMA FINANCIERO\n20-OTROS CON UTILIZACION DEL SISTEMA FINANCIERO\n19-TARJETA DE CR\u00c9DITO\n15-COMPENSACI\u00d3N DE DEUDAS\n16-TARJETA DE D\u00c9BITO\n17-DINERO ELECTR\u00d3NICO\n18-TARJETA PREPAGO\n21-ENDOSO DE T\u00cdTULOS"
+  },
+  {
+   "fieldname": "sec_sri",
+   "fieldtype": "Section Break",
+   "label": "SRI - Estado de Facturaci\u00f3n electr\u00f3nica  "
+  },
+  {
+   "fieldname": "clavedeacceso",
+   "fieldtype": "Data",
+   "label": "Clave de Acceso",
+   "read_only": 1
+  },
+  {
+   "fieldname": "fecha_auto",
+   "fieldtype": "Data",
+   "label": "Fecha Autorizaci\u00f3n",
+   "read_only": 1
+  },
+  {
+   "fieldname": "mensaje",
+   "fieldtype": "Text",
+   "label": "Mensaje",
+   "read_only": 1
+  },
+  {
+   "fieldname": "btnnotacredito",
+   "fieldtype": "Button",
+   "label": "Generar Nota de Cr\u00e9dito"
+  },
+  {
+   "fieldname": "generarxml",
+   "fieldtype": "Button",
+   "label": "Re-Generar XML ( En Caso de Error)"
+  },
+  {
+   "fieldname": "sri_establecimiento",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "sri_establecimiento"
+  },
+  {
+   "fieldname": "column_break_32",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "numero_auto",
+   "fieldtype": "Data",
+   "label": "Numero de Autorizaci\u00f3n",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sri_ambiente",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "sri_ambiente"
+  },
+  {
+   "fieldname": "estado",
+   "fieldtype": "Read Only",
+   "label": "Estado (SRI)"
+  },
+  {
+   "fieldname": "ride",
+   "fieldtype": "Button",
+   "label": "Ver PDF (RIDE)"
+  },
+  {
+   "fieldname": "detalle_pago_section",
+   "fieldtype": "Section Break",
+   "label": "Detalle Pago"
+  },
+  {
+   "fieldname": "registrocobro",
+   "fieldtype": "Data",
+   "label": "Registro de Cobros"
+  },
+  {
+   "fieldname": "usuario",
+   "fieldtype": "Link",
+   "label": "Usuario",
+   "options": "User"
+  },
+  {
+   "fieldname": "secnotascred",
+   "fieldtype": "Section Break",
+   "label": "Notas de Cr\u00e9dito"
+  },
+  {
+   "fieldname": "notascredito",
+   "fieldtype": "Data",
+   "label": "Nota de Cr\u00e9dito"
+  },
+  {
+   "fieldname": "seceselec",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "secuencial2",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Secuencial 2"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Facturas",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "cliente.ruc",
+   "fieldname": "cedulacli",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "CedulaCli"
+  },
+  {
+   "fetch_from": "cliente.direccion",
+   "fieldname": "direccioncli",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Direccioncli"
+  },
+  {
+   "fetch_from": "cliente.correo",
+   "fieldname": "emailcli",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Correo"
+  },
+  {
+   "fieldname": "registro_cobros",
+   "fieldtype": "Link",
+   "label": "registro_cobros",
+   "options": "registro_cobros",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:false",
+   "fieldname": "section_break_49",
+   "fieldtype": "Section Break",
+   "label": "Detalles",
+   "read_only": 1
+  },
+  {
+   "fieldname": "barcode",
+   "fieldtype": "Barcode",
+   "label": "barcode"
+  },
+  {
+   "fieldname": "numero_poliza",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "numero_poliza"
+  },
+  {
+   "fieldname": "fecha_pago",
+   "fieldtype": "Date",
+   "label": "fecha_pago",
+   "read_only": 1
+  },
+  {
+   "fieldname": "ramos",
+   "fieldtype": "Link",
+   "label": "ramo",
+   "options": "Ramos",
+   "read_only": 1
+  },
+  {
+   "fieldname": "subtotalcero",
+   "fieldtype": "Currency",
+   "label": "subtotalcero"
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2021-08-23 04:51:33.325074",
+ "modified_by": "Administrator",
+ "module": "facturacion",
+ "name": "Facturas",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "COORDINADOR",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "USUARIO INTERNO",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "num_fac",
+ "track_changes": 1,
+ "track_seen": 1
+}
